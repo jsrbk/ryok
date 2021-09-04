@@ -207,27 +207,27 @@ body {
   width: 100%;
 }
 
-.three .three__box {
+.sections .three__box {
   padding: 50px 0;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
-.three .three__box .items {
+.sections .three__box .items {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.three .three__box .items span {
+.sections .three__box .items span {
   font-size: 4em;
 }
-.three .three__box .items .desc {
+.sections .three__box .items .desc {
   margin-top: 20px;
   font-weight: 300;
   text-transform: uppercase;
   font-size: 1.3em;
 }
-.three .three__box .items ul {
+.sections .three__box .items ul {
   padding: 0 20px;
 }
 
