@@ -1,13 +1,12 @@
-@import 'siteicons.css';
+@import url('siteicons.css');
 
 $mainColor: rgb(19, 0, 104);
-$mainFont: 'Roboto', sans-serif;
-$headerFont: 'Roboto Condensed', sans-serif;
+$mainFont: 'Urbanist', sans-serif; //'Roboto', sans-serif;
+$headerFont: 'Urbanist', sans-serif; //'Roboto Condensed', sans-serif;
 
 body {
     margin: 0;
     font-family: $mainFont;
-    counter-reset: section;
 }
 
 ::selection {
@@ -29,19 +28,28 @@ body {
     letter-spacing: 3px;
     text-transform: uppercase;
     position: relative;
+    display: inline-block;
     z-index: 1;
+
     &::before {
-        counter-increment: section;
-        content: "#" counter(section);
+        content: '';
         position: absolute;
-        top: 0;
-        margin-left: -60px;
-        font-size: 2em;
-        color: #fff;
+        bottom: 5px;
+        width: 100%;
+        height: 1px;
+        background-color: rgba(248,102,17,0.7);
         z-index: -1;
-        border-radius: 50%;
-        background-color: rgba(248, 102, 17, .5);
-        box-shadow: 0 0 0 10px rgba(248, 102, 17, .2);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 1px;
+        left: 0;
+        width: 50%;
+        height: 4px;
+        background-color: rgba(248,102,17,0.7);
+        z-index: -1;
     }
 }
 
@@ -112,8 +120,7 @@ body {
                     font-size: 1em;
                 }
                 &:nth-child(2) {
-                    font-size: 1.5em;
-                    color: #17394F;
+                    font-size: 1.302em;
                 }
             }
         }
@@ -147,7 +154,11 @@ body {
 
 .main-nav {
     padding: 15px 0;
-    // background-color: rgb(248, 236, 234);
+    background-color: #fff; //rgb(248, 236, 234);
+    position: sticky;
+    top: 0;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    z-index: 99;
     
     &__menu {
         padding: 0;
@@ -169,12 +180,35 @@ body {
                 transition: all .2s ease;
             }
 
-            
+            &.dropdown {
+                > a {
+                    &::after {
+                        content: "";
+                        width: 5px;
+                        height: 5px;
+                        border-right: 1px solid #000;
+                        border-bottom: 1px solid #000;
+                        position: absolute;
+                        right: 5px;
+                        top: 5px;
+                        transform: rotate(45deg);
+                        transition: all .3s ease;
+                    }
+                }
+           }            
             
             &:hover {
-                a {
-                    color: #fff;
-                    background-color: $mainColor;
+                > a {
+                    
+                }
+
+                &.dropdown {
+                    a {
+                       &::after {
+                        transform: rotate(225deg);
+                        top: 8px;
+                    }
+                    }
                 }
 
                 ul {
@@ -186,21 +220,42 @@ body {
         &__submenu {
             display: none;
             list-style: none;
-            padding: 0;
+            padding: 10px 0;
             flex-direction: column;
             position: absolute;
             top: 34px;
-            width: 200px;
+            width: 220px;
             z-index: 99;
+            border: 1px solid $mainColor;
+            background-color: #fff;
+            border-radius: 10px;
+            //margin-left: 20px;
+
+            &::before {
+                content: '';
+                width: 10px;
+                height: 10px;
+                border-top: 1px solid $mainColor;
+                border-left: 1px solid $mainColor;
+                transform: rotate(45deg);
+                position: absolute;
+                top: -6px;
+                background-color: #fff;
+                left: 40px;
+                z-index: 98;
+            }
 
             &-item {
                 a {
                     display: block;
                     text-align: left;
-                    padding: 10px 10px 10px 30px;
+                    padding: 10px 10px 10px 25px;
+                    //color: #fff;
+                    //background-color: $mainColor;
 
                     &:hover {
-                        background-color: rgb(59, 43, 128);
+                        color: $mainColor;
+                        text-decoration: underline;
                     }
                 }
             }
