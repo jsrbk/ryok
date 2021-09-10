@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'siteicons';
-  src:  url('fonts/siteicons.eot?7dftq0');
-  src:  url('fonts/siteicons.eot?7dftq0#iefix') format('embedded-opentype'),
-    url('fonts/siteicons.ttf?7dftq0') format('truetype'),
-    url('fonts/siteicons.woff?7dftq0') format('woff'),
-    url('fonts/siteicons.svg?7dftq0#siteicons') format('svg');
+  src:  url('fonts/siteicons.eot?aehb4n');
+  src:  url('fonts/siteicons.eot?aehb4n#iefix') format('embedded-opentype'),
+    url('fonts/siteicons.ttf?aehb4n') format('truetype'),
+    url('fonts/siteicons.woff?aehb4n') format('woff'),
+    url('fonts/siteicons.svg?aehb4n#siteicons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-checked:before {
+  content: "\e90b";
+}
 .icon-atom:before {
   content: "\e903";
 }
@@ -57,7 +60,4 @@
 }
 .icon-location:before {
   content: "\e902";
-}
-.icon-check-circle:before {
-  content: "\f058";
 }

@@ -22,8 +22,6 @@
     <link rel="stylesheet" href="plugins/owlcarousel/css/owl.carousel.min.css">
     <link rel="stylesheet" href="plugins/owlcarousel/css/owl.theme.default.min.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
@@ -195,7 +193,7 @@
         </div>
     </section>
 
-    <section class="four">
+    <section class="goals py-5">
         <div class="container">
             <div class="section__title text_center">Kengashning maqsad va vazifalari</div>
             <div class="row">
@@ -335,6 +333,8 @@
         </div>
     </footer>
 
+    <a id="backToTop"></a>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="plugins/owlcarousel/js/owl.carousel.min.js"></script>
     <script>
@@ -397,6 +397,20 @@
     }
     setInterval(showDateTime, 10);
 
+
+    var btn = $('#backToTop');
+    $(window).scroll(function() {
+    if ($(window).scrollTop() > 300) {
+        btn.addClass('show');
+    } else {
+        btn.removeClass('show');
+    }
+    });
+
+    btn.on('click', function(e) {
+    e.preventDefault();
+    $('html, body').animate({scrollTop:0}, '300');
+    });
     </script>
 </body>
 </html>

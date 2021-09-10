@@ -1,6 +1,6 @@
 @import url('siteicons.css');
 
-$mainColor: rgb(19, 0, 104);
+$mainColor: rgb(10, 10, 104);
 $mainFont: 'Urbanist', sans-serif; //'Roboto', sans-serif;
 $headerFont: 'Urbanist', sans-serif; //'Roboto Condensed', sans-serif;
 
@@ -65,6 +65,46 @@ body {
 
 .white_text {
     font-weight: 200;
+}
+
+
+#backToTop {
+    display: block;
+    background-color: $mainColor;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: all .3s;
+    bottom: -70px;
+    z-index: 1000;
+    opacity: .5;
+    box-shadow: 0 0 0 1px #fff;
+
+    &::after {
+        content: "";
+        border-left: 1px solid #fff;
+        border-top: 1px solid #fff;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        transform: translate(-50%, -50%) rotate(45deg);
+        top: 60%;
+        left: 50%;
+    }
+    &:hover {
+        cursor: pointer;
+        opacity: 1;
+    }
+    &:active {
+        background-color: #555;
+    }
+    &.show {
+        bottom: 30px;
+    }
 }
 
 .top {
@@ -198,16 +238,13 @@ body {
            }            
             
             &:hover {
-                > a {
-                    
-                }
 
                 &.dropdown {
                     a {
-                       &::after {
-                        transform: rotate(225deg);
-                        top: 8px;
-                    }
+                        &::after {
+                            transform: rotate(225deg);
+                            top: 8px;
+                        }
                     }
                 }
 
@@ -287,11 +324,12 @@ body {
                     border: 2px solid $mainColor;
                     border-radius: 30px;
                     transition: all ease .5s;
+                    font-weight: bold;
             
                     &:hover {
                         background-color: $mainColor;
                         color: #fff;
-                        box-shadow: 0 0 0 10px rgba(19, 0, 104, 0.4);
+                        box-shadow: 0 0 0 7px rgba(19, 0, 104, 0.4);
                     }
                 }
             }
@@ -307,9 +345,6 @@ body {
 }
 
 .sections {
-    &__container {
-        
-    }
 
     &__section {
         text-align: center;
@@ -332,20 +367,27 @@ body {
     }
 }
 
-.four {
+.goals {
     ul {
+        list-style: none;
+        padding: 0;
+        padding-left: 40px;
+
         li {
-            padding: 10px 0 10px 20px;
-            &::marker {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            
+            &::before {
                 font-family: 'siteicons';
-                font-size: 1.2em;
-                display: block;
-                padding: 20px;
-                content: '\f058';
+                padding-right: 20px;
+                font-size: 2em;
+                content: '\e90b';
                 color: rgb(77, 156, 77);
             }
         }
     }
+    
     .research {
         align-self: center;
         img {
@@ -379,7 +421,7 @@ body {
             &:hover {
                 background-color: #fff;
                 color: $mainColor;
-                box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.4);
+                box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.4);
             }
         }
     }
