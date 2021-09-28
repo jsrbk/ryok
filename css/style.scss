@@ -14,12 +14,6 @@ body {
     color: #fff;
 }
 
-.container {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
 .section__title {
     font-weight: 300;
     font-size: 2em;
@@ -71,8 +65,8 @@ body {
 #backToTop {
     display: block;
     background-color: $mainColor;
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     text-align: center;
     border-radius: 50%;
     position: fixed;
@@ -430,10 +424,12 @@ body {
 .members {
     background-color: rgb(253, 246, 245);
     .member {
-        margin: 0 10px;
+        margin: 10px;
         background-color: #fff;
         border-radius: 10px;
-            overflow: hidden;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
         &__img {
             overflow: hidden;
             img {
@@ -474,7 +470,7 @@ body {
                 font-family: $headerFont;
                 text-transform: uppercase;
                 font-weight: 500;
-                font-size: 1.2em;
+                font-size: 1em;
                 position: relative;
                 background-color: #fff;
                 top: -27px;
@@ -511,10 +507,75 @@ body {
 
 .footer {
     color: #fff;
-    background: $mainColor url(../img/bg.png) no-repeat center 40px / 500px;
-    .footer__content {
-        height: 400px;
+    background: $mainColor; //url(../img/bg.png) no-repeat center 40px / 500px
+    
+    &__content {
+        color: #fff;
+
+        a {
+            color: #fff;
+        }
     }
+
+    &__title {
+        font-weight: 200;
+        font-size: 1.5em;
+        margin-bottom: 16px;
+    }
+
+    &__list {
+        padding-left: 20px;
+        margin: 0;
+        list-style: none;
+
+        li {
+            position: relative;
+
+            a {
+                text-decoration: none;
+            }
+            
+            &:not(:first-child) {
+                margin-top: 5px;
+            }
+
+            &::before {
+                content: '';
+                width: 5px;
+                height: 5px;
+                border-top: 3px solid rgba(248,102,17,1);
+                border-right: 3px solid rgba(248,102,17,1);
+                position: absolute;
+                left: -20px;
+                top: 6px;
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    &__contacts {
+        .contact_info__icon {
+            margin-bottom: 10px;
+        }
+
+        [class^="icon-"] {
+            font-size: 2em;
+            margin: 5px 15px 0 0;
+            display: block;
+        }
+    }
+
+    &__socials {
+
+        a {
+            text-decoration: none;
+            font-size: 1.5em;
+            margin-right: 12px;
+            color: #fff;
+            opacity: .5;
+        }
+    }
+
     .copyright {
         border-top: 1px solid rgba(255, 255, 255, 0.5);
         padding: 30px 0;
