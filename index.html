@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/bootstrap-utilities.min.css">
 
-    <link rel="stylesheet" href="plugins/owlcarousel/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="plugins/owlcarousel/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
 
     <link rel="stylesheet" href="css/style.min.css">
 </head>
@@ -230,8 +230,14 @@
 
     <section class="members py-5">
         <div class="container">
-            <div class="section__title text_center mb-5">Kengash a'zolari</div>
-            <div class="row owl-carousel members-carousel g-0">
+            <div class="d-flex justify-content-between mb-5">
+                <div class="section__title text_center">Kengash a'zolari</div>
+                <div class="arrows">
+                    <div class="prev prev-1"></div>
+                    <div class="next next-1"></div>
+                </div>
+            </div>
+            <div class="row members-slider g-0">
                 <div class="col">
                     <div class="member">
                         <div class="member__img">
@@ -304,8 +310,14 @@
 
     <section class="links py-5">
         <div class="container">
-            <div class="section__title text_center mb-5">Foydali manbaalar</div>
-            <div class="row g-0 owl-carousel links-carousel">
+            <div class="d-flex justify-content-between mb-5">
+                <div class="section__title text_center">Foydali manbaalar</div>
+                <div class="arrows">
+                    <div class="prev prev-2"></div>
+                    <div class="next next-2"></div>
+                </div>
+            </div>
+            <div class="row g-0 links-slider">
                 <div class="col"><div class="link"><a href="https://prezident.uz" target="_blank" rel="noopener noreferrer"><img src="img/links/prezident.uz.png" alt=""></a></div></div>
                 <div class="col"><div class="link"><a href="https://gov.uz" target="_blank" rel="noopener noreferrer"><img src="img/links/gov.uz.png" alt=""></a></div></div>
                 <div class="col"><div class="link"><a href="https://my.gov.uz" target="_blank" rel="noopener noreferrer"><img src="img/links/my.gov.uz.png" alt=""></a></div></div>
@@ -379,7 +391,7 @@
                 </div>
             </div>
             <div class="copyright d-flex justify-content-between">
-                <div class="copyright__text">&copy; 2021 All rights reserved.</div>
+                <div class="copyright__text">&copy; 2021 Barcha huquqlar himoyalangan.</div>
                 <div class="footer__socials">
                     <a href=""><span class="icon-facebook"></span></a>
                     <a href=""><span class="icon-telegram"></span></a>
@@ -396,45 +408,71 @@
     <a id="sendMessage"><span class="icon-"></span></a>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="plugins/owlcarousel/js/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script>
     $(document).ready(function(){
-        $(".owl-carousel.members-carousel").owlCarousel({
-            loop:true,
-            autoplay:true,
-            autoplayTimeout:4000,
-            autoplaySpeed:2000,
-            autoplayHoverPause:true,
-            responsive:{
-                0:{
-                    items:1
+        $(".members-slider").slick({
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 5000,
+            prevArrow: $('.prev.prev-1'),
+            nextArrow: $('.next.next-1'),
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1
+                    }
                 },
-                600:{
-                    items:3
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
                 },
-                1000:{
-                    items:5
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
                 }
-            }
+            ]
         });
 
-        $(".owl-carousel.links-carousel").owlCarousel({
-            loop:true,
-            autoplay:true,
-            autoplayTimeout:3000,
-            autoplaySpeed:500,
-            autoplayHoverPause:true,
-            responsive:{
-                0:{
-                    items:1
+        $(".links-slider").slick({
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            prevArrow: $('.prev.prev-2'),
+            nextArrow: $('.next.next-2'),
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1
+                    }
                 },
-                600:{
-                    items:3
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
                 },
-                1000:{
-                    items:5
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
                 }
-            }
+            ]
         });
     });
 

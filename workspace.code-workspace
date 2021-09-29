@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"compile-hero.disable-compile-files-on-did-save-code": false,
+		"liveServer.settings.multiRootWorkspaceName": "2",
+		"git.ignoreLimitWarning": true,
+		"liveServer.settings.port": 5501
+	}
+}
