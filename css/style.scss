@@ -112,44 +112,47 @@ body {
     font-weight: 200;
 }
 
+@keyframes backToTop {
+    to {
+        top: 17px;
+    }
+}
 
-#backToTop {
-    display: block;
-    background-color: $midnightBlue;
+.back-to-top {
     width: 60px;
     height: 60px;
-    text-align: center;
     border-radius: 50%;
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    transition: all .3s;
-    bottom: -70px;
-    z-index: 1000;
-    opacity: .5;
-    box-shadow: 0 0 0 1px #fff;
+    margin: 0 auto -40px;
+    background-color: $midnightBlue;
+    position: relative;
+    cursor: pointer;
 
     &::after {
         content: "";
-        border-left: 1px solid #fff;
-        border-top: 1px solid #fff;
-        width: 20px;
-        height: 20px;
+        border-left: 2px solid #fff;
+        border-top: 2px solid #fff;
+        width: 10px;
+        height: 10px;
         position: absolute;
-        transform: translate(-50%, -50%) rotate(45deg);
-        top: 60%;
-        left: 50%;
+        transform: rotate(45deg);
+        top: 23px;
+        left: 25px;
+        animation: backToTop .7s ease-in-out infinite alternate;
     }
-    &:hover {
-        cursor: pointer;
-        opacity: 1;
-    }
-    &:active {
-        background-color: #555;
-    }
-    &.show {
-        bottom: 30px;
-    }
+}
+
+.send-message {
+    width: 80px;
+    height: 80px;
+    background-color: $reefGold;
+    border-radius: 50%;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    font-size: 2em;
+    color: #fff;
+    padding: 24px 0 0 24px;
+    box-sizing: border-box;
 }
 
 .top {
@@ -350,12 +353,8 @@ body {
     background-color: $romance;
     
     .slider__body {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
         
         .slider__content {
-            align-self: center;
             
             .slider__description {
                 line-height: 25px;
@@ -381,7 +380,6 @@ body {
             }
         }
         .slider__image {
-            flex-shrink: 500px;
             
             img {
                 width: 100%;
@@ -397,6 +395,7 @@ body {
 
         span {
             font-size: 4em;
+            color: $reefGold;
         }
 
         .desc {
@@ -414,30 +413,24 @@ body {
 }
 
 .goals {
-    ul {
-        list-style: none;
-        padding: 0;
-        padding-left: 40px;
+    counter-reset: goal_counter;
 
-        li {
-            display: flex;
-            align-items: center;
-            padding: 10px 0;
-            
-            &::before {
-                font-family: 'siteicons';
-                padding-right: 20px;
-                font-size: 2em;
-                content: '\e90b';
-                color: rgb(77, 156, 77);
-            }
-        }
-    }
-    
-    .research {
-        align-self: center;
-        img {
-            width: 100%;
+    .goal {
+        padding-left: 100px;
+        position: relative;
+        margin-bottom: 20px;
+
+        &::before {
+            counter-increment: goal_counter;
+            content: counter(goal_counter);
+            color: $reefGold;
+            font-size: 5em;
+            position: absolute;
+            font-weight: 100;
+            width: 80px;
+            text-align: right;
+            left: 0;
+            top: -10px;
         }
     }
 }
