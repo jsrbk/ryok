@@ -149,9 +149,9 @@
                         ijtimoiy-siyosiy, iqtisodiy, ma’naviy rivojlanishidagi muhim muammolarning ilmiy jihatdan
                         yechimini topish hamda yosh olimlarning ijodiy yutuqlarini targ'iib qilish maqsadida tashkil
                         etilgan.</div>
-                    <div class="slider__button mt-5"><a class="text-uppercase text-center text-decoration-none" href="">Batafsil</a></div>
+                    <div class="slider__button my-5"><a class="text-uppercase text-center text-decoration-none" href="">Batafsil</a></div>
                 </div>
-                <div class="col-4 slider__image"><img src="https://static.mywebsites360.com/dca4f65169554e89ac7b9abb29fc0276/i/cca2f977a4cd42528809d86ae40f2855/1/4SoifmQp45JMgBnHp7ed2/science.png" alt=""></div>
+                <div class="col-4 slider__image d-flex align-items-end"><img src="https://static.mywebsites360.com/dca4f65169554e89ac7b9abb29fc0276/i/cca2f977a4cd42528809d86ae40f2855/1/4SoifmQp45JMgBnHp7ed2/science.png" alt=""></div>
             </div>
         </div>
     </section>
@@ -189,7 +189,7 @@
 
     <section class="goals py-5">
         <div class="container">
-            <div class="section__title text_center">Kengashning maqsad va vazifalari</div>
+            <div class="section__title text_center mb-5">Kengashning maqsad va vazifalari</div>
             <div class="row">
                 <div class="col-6">
                     <div class="goal">O‘zbekiston Respublikasining “Yoshlarga oid davlat siyosati to‘g‘risida”gi Qonuni va O‘zbekiston Respublikasining Kadrlar tayyorlash milliy dasturi negizida zamon talablariga javob beradigan, muayyan bilim sohasi bo‘yicha ilmiy tadqiqot izlanishlarini olib borayotgan yosh olimlar va iqtidorli yoshlarning ilmiy tadqiqot, ixtirochilik va intellektual salohiyatlarini rivojlantirish, amaliyotga keng joriy etish orqali ularni moddiy va ma’naviy qo‘llab-quvvatlashdan</div>
@@ -451,6 +451,27 @@
     </footer>
 
     <div class="send-message"><span class="icon-chat"></span></div>
+    <div class="message-box">
+        <div class="message-box__head">
+            <div class="head__title"></div>
+            <a class="close_button">&times;</a>
+        </div>
+        <div class="message-box__body">
+            <div class="header-text">Murojaat yo'llash</div>
+            <div class="small-text">Sizda savol yoki taklif bo'lsa bizga murojaat qiling. Biz siz bilan albatta bog'lanamiz.</div>
+            <form action="">
+                <label for="name">Ismingiz:</label>
+                <input id="name" name="name" type="text" placeholder="Ismingiz...">
+                <label for="email">E-mail:</label>
+                <input id="email" name="email" type="email" placeholder="E-mail...">
+                <label for="subject">Mavzu:</label>
+                <input id="subject" name="subject" type="text" placeholder="Mavzu...">
+                <label for="message">Murojaat matni:</label>
+                <textarea id="message" name="message" rows="5"></textarea>
+                <button type="button">Murojaatni yo'llash</button>
+            </form>
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
@@ -545,6 +566,16 @@
             $('html, body').animate({
                 scrollTop: 0
             }, '500');
+        });
+
+        $(".send-message").click(function() {
+            $(".message-box").toggle("fast");
+            $(".send-message").toggleClass("mini");
+        });
+
+        $(".close_button").click(function() {
+            $(".message-box").hide("fast");
+            $(".send-message").removeClass("mini");
         });
     </script>
 </body>

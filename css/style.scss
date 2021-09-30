@@ -1,7 +1,7 @@
 @import url('siteicons.css');
 
 $midnightBlue: #0A0A68;
-$reefGold: #A38331;
+$reefGold: rgb(163, 131, 49);
 $romance: #F3EEE4;
 $mainFont: 'Urbanist', sans-serif; //'Roboto', sans-serif;
 $headerFont: 'Urbanist', sans-serif; //'Roboto Condensed', sans-serif;
@@ -153,6 +153,104 @@ body {
     color: #fff;
     padding: 24px 0 0 24px;
     box-sizing: border-box;
+    cursor: pointer;
+    transition: all .3s ease;
+    box-shadow: 0 0 0 0 rgba(163, 131, 49, .7);
+    -webkit-animation: pulse 1.5s infinite cubic-bezier(0.66, 0, 0, 1);
+       -moz-animation: pulse 1.5s infinite cubic-bezier(0.66, 0, 0, 1);
+        -ms-animation: pulse 1.5s infinite cubic-bezier(0.66, 0, 0, 1);
+            animation: pulse 1.5s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+@-webkit-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(163, 131, 49, 0);}}
+   @-moz-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(163, 131, 49, 0);}}
+    @-ms-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(163, 131, 49, 0);}}
+        @keyframes pulse {to {box-shadow: 0 0 0 45px rgba(163, 131, 49, 0);}}
+
+.mini {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25em;
+    padding: 15px 0 0 15px;
+    -webkit-animation: none;
+       -moz-animation: none;
+        -ms-animation: none;
+            animation: none;
+}
+
+.message-box {
+    width: 300px;
+    position: fixed;
+    bottom: 30px;
+    right: 100px;
+    box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 30px;
+    background-color: #fff;
+    display: none;
+
+    &__head {
+        
+    }
+
+    &__body {
+        .header-text {
+            margin: 10px 0 5px;
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        .small-text {
+            text-align: center;
+            font-size: 0.9em;
+            color: #555;
+        }
+    }
+
+    .close_button {
+        font-size: 1.2em;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        color: #aaa;
+        padding: 0px 7px;
+        cursor: pointer;
+        border-radius: 50%;
+        transition: all .2s ease;
+
+        &:hover {
+            background-color: #f0f0f0;
+        }
+    }
+
+    form {
+        margin-top: 20px;
+
+        label {
+            display: block;
+            margin: 5px 0 2px;
+        }
+
+        input, textarea {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 15px 10px;
+            border: none;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+
+        button {
+            border: none;
+            background-color: $midnightBlue;
+            color: #fff;
+            padding: 15px 20px;
+            width: 100%;
+            border-radius: 5px;
+            margin-top: 5px;
+            font-family: inherit;
+        }
+    }
 }
 
 .top {
